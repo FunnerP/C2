@@ -73,7 +73,7 @@ public class EncryptionDecorator : NotificationDecorator
     public override void Send(string message)
     {
         string encryptedMessage = Encrypt(message);
-        Console.WriteLine("---Шифрование---");
+        Console.WriteLine("--=Шифрование=--");
         base.Send(encryptedMessage);
     }
 }
@@ -88,11 +88,11 @@ class Program
         notification = new EncryptionDecorator(notification);
         notification = new LoggingDecorator(notification);
         notification.Send("Ку-ку епта");
-        Console.WriteLine("\n---Логирование---");
+        Console.WriteLine("\n--=Логирование=--");
         INotification smsNotification = new SmsNotification();
         smsNotification = new LoggingDecorator(smsNotification);
         smsNotification.Send("Дарова корова");
-        Console.WriteLine("\n---Шифрование и логирование---");
+        Console.WriteLine("\n--=Шифрование и логирование=--");
         INotification pushNotification = new PushNotification();
         pushNotification = new EncryptionDecorator(pushNotification);
         pushNotification = new LoggingDecorator(pushNotification);
