@@ -28,7 +28,7 @@ public class PushNotification : INotification
 {
     public void Send(string message)
     {
-        Console.WriteLine($"Отправка уведомления: {message}");
+        Console.WriteLine($"Отправка сообщения: {message}");
     }
 }
 
