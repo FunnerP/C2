@@ -53,7 +53,7 @@ public class LoggingDecorator : NotificationDecorator
 
     public override void Send(string message)
     {
-        Console.WriteLine($"Отправка уведомления: {message}");
+        Console.WriteLine($"Отправка сообщения: {message}");
         base.Send(message);
     }
 }
